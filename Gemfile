@@ -33,6 +33,8 @@ gem 'mongoid', '~> 5.0.0'
 gem 'bson_ext'
 gem 'devise'
 
+gem 'bootstrap_sb_admin_base_v2'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
