@@ -1,7 +1,8 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    # logger.tagged('user.index') { logger.info current_user }
     @users = User.all
   end
 

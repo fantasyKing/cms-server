@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   root 'dashboard#index'
 
   get 'pages/about', to: 'pages#about'
-  resources :users, only: [:show]
+  resources :users, only: [:show, :index]
 end
