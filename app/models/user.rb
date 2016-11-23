@@ -33,4 +33,5 @@ class User
   # field :unlock_token,    type: String # Only if unlock strategy is :email or :both
   # field :locked_at,       type: Time
   field :is_admin, type: Boolean, default: false
+  field :name, type: String, default: ''
 end
