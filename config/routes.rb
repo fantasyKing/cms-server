@@ -4,4 +4,6 @@ Rails.application.routes.draw do
 
   get 'pages/about', to: 'pages#about'
   resources :users, only: [:show, :index]
+
+  mount API => '/'
 end

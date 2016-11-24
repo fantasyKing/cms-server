@@ -37,6 +37,8 @@ gem 'bootstrap_sb_admin_base_v2'
 
 gem 'rename', '~> 1.0', '>= 1.0.2'
 
+gem 'grape'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
