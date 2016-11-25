@@ -43,6 +43,8 @@ gem 'datagrid', '~> 1.5', '>= 1.5.1'
 
 gem "kaminari"
 
+gem 'simple_form' 
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
