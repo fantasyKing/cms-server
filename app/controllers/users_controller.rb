@@ -2,8 +2,9 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    # logger.tagged('user.index') { logger.info current_user }
-    @users = User.all
+    @users_grid = UsersGrid.new(params[:users_grid]) do |scope|
+      scope.page(params[:page]).per(10)
+    end
   end
 
   def show
