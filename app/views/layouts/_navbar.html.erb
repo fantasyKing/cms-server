@@ -35,7 +35,28 @@
             Dashboard</a>
         </li>
         <li>
-          <a href="#"><i class="fa fa-users fa-fw"></i> users<span class="fa arrow"></span></a>
+          <a href="#"><i class="fa fa-database fa-fw"></i> Database<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level collapse">
+            <li>
+              <a href="#">User<span class="fa arrow"></span></a>
+              <ul class="nav nav-third-level">
+                <li>
+                    <a href="#">user</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">App<span class="fa arrow"></span></a>
+              <ul class="nav nav-third-level">
+                <li>
+                    <a href="#">app_info</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#"><i class="fa fa-users fa-fw"></i> Users<span class="fa arrow"></span></a>
           <ul class="nav nav-second-level collapse">
             <li>
               <%= link_to 'User List', users_path %>
