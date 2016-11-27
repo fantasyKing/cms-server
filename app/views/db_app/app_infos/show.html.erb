@@ -1,0 +1,9 @@
+<% content_for(:page_header) do %>
+  <%= "Database" %>
+<% end %>
+<% content_for :panel_heading do %>Details App: app_info<% end %>
+
+<h3>User</h3>
+<p>Name: <%= @app_info.name if @app_info.name %></p>
+<p>Email: <%= @app_info.email if @app_info.email %></p>
+<p>Is_Admin: <%= @app_info.is_admin if @app_info.is_admin %></p>

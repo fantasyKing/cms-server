@@ -1,1 +1,8 @@
-<h1>app.app_info</h1>
+<% content_for(:page_header) do %>
+  <%= "Database" %>
+<% end %>
+<% content_for :panel_heading do %>App: app_info<% end %>
+<%= datagrid_form_for @app_app_info_grid, :method => :get, :url => db_app_app_infos_path %>
+<div class='total'>Total: <%= @app_app_info_grid.assets.total_count %></div>
+<%= datagrid_table @app_app_info_grid %>
+<%= paginate(@app_app_info_grid.assets) %>

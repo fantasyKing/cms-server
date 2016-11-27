@@ -11,3 +11,9 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore mongodb config files
+/config/mongoid.yml
+
+# Ignore mysql config files
+/config/database.yml
