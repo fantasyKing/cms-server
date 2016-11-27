@@ -1,7 +1,9 @@
+<% content_for(:page_header) do %>
+  <%= "User" %>
+<% end %>
+<% content_for :panel_heading do %>Create user<% end %>
+
 <div class="block">
-  <div class="block-header">
-    新建User
-  </div>
   <div class="block-content">
     <%= simple_form_for @user, url: users_path  do |f| %>
       <%= render :partial => 'form',:locals => {f: f} %>

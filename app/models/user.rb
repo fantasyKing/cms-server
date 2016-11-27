@@ -38,7 +38,7 @@ class User
 
   def self.valid_attrs
     # res = attribute_names.delete_if{|i| i.in? ["_id","created_at","updated_at", ""]}
-    res = ["email","is_admin"]
+    res = ["name","email","is_admin"]
     res.map {|i| i.to_sym}
   end
 end

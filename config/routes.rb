@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root 'dashboard#index'
 
   get 'pages/about', to: 'pages#about'
-  resources :users
+  scope '/admin' do
+    resources :users
+  end
 
   mount API => '/'
 end

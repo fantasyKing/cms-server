@@ -15,11 +15,35 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+      @user = User.find(params[:id])
   end
 
   def destroy
     @user = User.find(params[:id]).delete
     redirect_to :back, notice: "Deleted." #dashboard_users_path
+  end
+
+  def create
+    @user = User.create(user_params)
+    redirect_to :back, notice: "Created." #dashboard_users_path
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      redirect_to :back, notice: "Updated." #dashboard_users_path
+    end      
+  end
+
+  def import
+    User.import(params[:file])
+    redirect_to :back, notice: "Imported."
+  end
+  def new
+    @user = User.new
+  end
+  private
+  def user_params
+    params.require(:user).permit(User.valid_attrs)
   end
 end
