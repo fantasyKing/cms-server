@@ -28,7 +28,7 @@ module DbApp
       @app_info = AppAppInfo.find(params[:id])
       if @app_info.update(app_info_params)
         redirect_to :back, notice: "Updated." #dashboard_users_path
-      end      
+      end
     end
 
     def new
@@ -37,12 +37,17 @@ module DbApp
     private
     def app_info_params
       reqParams = params.require(:app_app_info).permit(AppAppInfo.valid_attrs)
-      # logger.tagged("req params") { logger.debug reqParams}
-      AppAppInfo.fields.each do |field|
-        if field[1].options[:type] == 'Array'
-          reqParams[field[1].options[:name]]
+
+      reqParams.each do |reqp|
+        if AppAppInfo.fields[reqp[0]] && AppAppInfo.fields[reqp[0]].options[:type] == Array then
+          reqParams[reqp[0]] = reqp[1].split(" ")
+        end
+        if AppAppInfo.fields[reqp[0]] && AppAppInfo.fields[reqp[0]].options[:type] == Hash then
+          reqParams[reqp[0]] = JSON.parse(reqp[1])
         end
       end
+
+      return reqParams
     end
   end
 end
