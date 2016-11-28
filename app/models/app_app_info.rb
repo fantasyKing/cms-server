@@ -37,9 +37,9 @@ class AppAppInfo
   def self.valid_attrs
     example = self.first
     if example.nil?
-      res = Test.fields.keys
+      res = AppAppInfo.fields.keys
     else
-      res = (Test.fields.keys + example.attributes.keys).delete_if{|i| i.in? ["_id","hello","created_at","updated_at","__v"]}
+      res = (AppAppInfo.fields.keys + example.attributes.keys).delete_if{|i| i.in? ["_id","hello","created_at","updated_at","__v"]}
     end
     res.map {|i| i.to_sym}
   end

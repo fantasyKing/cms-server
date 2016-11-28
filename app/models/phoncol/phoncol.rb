@@ -3,7 +3,7 @@ module Phoncol
   client_name = "phoncol"
   client = Mongoid.client(client_name)
   dbs = client.database_names
-  
+
   dbs.each do |db_name|
     print "#{db_name}\n"
     cols = client.use(db_name).database.collection_names
