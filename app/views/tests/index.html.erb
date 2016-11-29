@@ -1,0 +1,11 @@
+<% content_for(:page_header) do %>
+  <%= "Test" %>
+<% end %>
+<% content_for :panel_heading do %>test<% end %>
+<%= simple_form_for @test, url: tests_path(@test) do |f| %>
+  <%= f.input :title, label: 'Title:' %>
+  <%= f.input :body %>
+  <%= f.input :age, collection: 18..20 %>
+  <%= f.input :picture, as: :file %>
+  <%= f.button :submit %>
+<% end %>

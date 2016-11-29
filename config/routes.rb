@@ -17,4 +17,7 @@ Rails.application.routes.draw do
       resources :app_infos
     end
   end
+  scope '/test' do
+    resources :tests
+  end
 end

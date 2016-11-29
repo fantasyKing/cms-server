@@ -1,4 +1,4 @@
-module Test
+module GrapeTest
   class Ping < Grape::API
     desc 'Returns pong.'
     get :ping do

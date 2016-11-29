@@ -47,6 +47,8 @@ gem 'simple_form'
 
 gem 'qiniu', '>= 6.8.0'
 
+gem 'carrierwave'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

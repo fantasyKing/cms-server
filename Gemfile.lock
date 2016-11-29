@@ -55,6 +55,12 @@ GEM
     bson_ext (1.5.1)
     builder (3.2.2)
     byebug (9.0.6)
+    carrierwave (0.11.2)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
+      mimemagic (>= 0.3.0)
     coderay (1.1.1)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
@@ -118,6 +124,7 @@ GEM
       mime-types (>= 1.16, < 4)
     method_source (0.8.2)
     mime-types (2.99.3)
+    mimemagic (0.3.2)
     mini_portile2 (2.1.0)
     minitest (5.9.1)
     mongo (2.3.1)
@@ -249,6 +256,7 @@ DEPENDENCIES
   bootstrap_sb_admin_base_v2
   bson_ext
   byebug
+  carrierwave
   coffee-rails (~> 4.1.0)
   datagrid (~> 1.5, >= 1.5.1)
   devise
