@@ -1,3 +1,11 @@
+GIT
+  remote: git@github.com:fantasyKing/bootstrap_sb_admin_base_v2.git
+  revision: f1fa57a7a788fed93e6e76d5d0a7e6f11962c614
+  specs:
+    bootstrap_sb_admin_base_v2 (0.3.3)
+      font-awesome-rails
+      jquery-rails
+
 GEM
   remote: https://ruby.taobao.org/
   specs:
@@ -48,9 +56,6 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bootstrap_sb_admin_base_v2 (0.3.3)
-      font-awesome-rails
-      jquery-rails
     bson (4.1.1)
     bson_ext (1.5.1)
     builder (3.2.2)
@@ -258,7 +263,7 @@ PLATFORMS
 
 DEPENDENCIES
   better_errors
-  bootstrap_sb_admin_base_v2
+  bootstrap_sb_admin_base_v2!
   bson_ext
   byebug
   carrierwave

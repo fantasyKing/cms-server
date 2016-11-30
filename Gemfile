@@ -33,7 +33,7 @@ gem 'mongoid', '~> 5.0.0'
 gem 'bson_ext'
 gem 'devise'
 
-gem 'bootstrap_sb_admin_base_v2'
+gem 'bootstrap_sb_admin_base_v2', :git => 'git@github.com:fantasyKing/bootstrap_sb_admin_base_v2.git'
 
 gem 'rename', '~> 1.0', '>= 1.0.2'
 
