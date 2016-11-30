@@ -23,6 +23,9 @@
       <div class="panel panel-default">
         <div class="panel-heading">
           <%= content_for?(:panel_heading) ? yield(:panel_heading) : "Dashboard" %>
+          <p class="panel_button_heading">
+            <%= content_for?(:panel_button) ? yield(:panel_button) : "" %>
+          </p>
         </div>
         <div class="panel-body">
           <%= yield %>

@@ -33,6 +33,10 @@ class AppAppInfo
   field :win_url, type: String
   field :mac_version, type: String
   field :mac_url, type: String
+  field :alipay_partner_id, type: String
+  field :alipay_key, type: String
+  field :alipay_partner_public, type: String
+  field :alipay_partner_secret, type: String
 
   def self.valid_attrs
     example = self.first
