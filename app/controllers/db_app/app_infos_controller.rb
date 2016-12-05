@@ -36,7 +36,7 @@ module DbApp
     end
     private
     def app_info_params
-      reqParams = params.require(:app_app_info).permit(AppAppInfo.valid_attrs)
+      reqParams = params.require(:app_app_info).permit(AppAppInfo.valid_attrs.keys)
       reqParams.each do |reqp|
         # logger.tagged("req params") { logger.debug reqParams}
         if AppAppInfo.fields[reqp[0]] && AppAppInfo.fields[reqp[0]].options[:type] == Array then

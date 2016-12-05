@@ -39,12 +39,22 @@ class AppAppInfo
   field :alipay_partner_secret, type: String
 
   def self.valid_attrs
-    example = self.first
-    if example.nil?
-      res = AppAppInfo.fields.keys
-    else
-      res = (AppAppInfo.fields.keys + example.attributes.keys).delete_if{|i| i.in? ["_id","hello","created_at","updated_at","__v"]}
+    # example = self.first
+    # if example.nil?
+    #   res = AppAppInfo.fields.keys
+    # else
+    #   res = (AppAppInfo.fields.keys + example.attributes.keys).delete_if{|i| i.in? ["_id","hello","created_at","updated_at","__v"]}
+    # end
+    # res.map {|i| i.to_sym}
+    res = AppAppInfo.fields
+    tableHash = Hash.new;
+    res.each {|key, value| tableHash[key.to_sym] = value.options[:type].to_s }
+    firstIns = self.first
+    if !firstIns.nil?
+      firstIns.fields.each { |key, value| tableHash[key.to_sym] = value.options[:type].to_s }
     end
-    res.map {|i| i.to_sym}
+    logger.tagged("valid_attrs") { logger.debug tableHash}
+    filterArray = ['updated_at', 'created_at']
+    return tableHash.delete_if { |key, val| filterArray.include?(key.to_s)}
   end
 end
