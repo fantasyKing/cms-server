@@ -53,8 +53,8 @@ class AppAppInfo
     if !firstIns.nil?
       firstIns.fields.each { |key, value| tableHash[key.to_sym] = value.options[:type].to_s }
     end
-    logger.tagged("valid_attrs") { logger.debug tableHash}
-    filterArray = ['updated_at', 'created_at']
+    # logger.tagged("valid_attrs") { logger.debug tableHash}
+    filterArray = ['updated_at', 'created_at', '_id']
     return tableHash.delete_if { |key, val| filterArray.include?(key.to_s)}
   end
 end
