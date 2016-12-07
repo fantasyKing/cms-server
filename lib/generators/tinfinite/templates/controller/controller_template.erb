@@ -7,42 +7,42 @@ module Db<%= db_name_camel %>
     end
 
     def show
-      @<%= instance_name %> = <%= model_name_camel %>.find(params[:id])
+      @<%= instance_name %> = <%= class_name %>.find(params[:id])
     end
 
     def edit
-        @<%= instance_name %> = <%= model_name_camel %>.find(params[:id])
+        @<%= instance_name %> = <%= class_name %>.find(params[:id])
     end
 
     def destroy
-      @<%= instance_name %> = <%= model_name_camel %>.find(params[:id]).delete
+      @<%= instance_name %> = <%= class_name %>.find(params[:id]).delete
       redirect_to :back, notice: "Deleted." #dashboard_users_path
     end
 
     def create
-      @<%= instance_name %> = <%= model_name_camel %>.create(app_info_params)
+      @<%= instance_name %> = <%= class_name %>.create(app_info_params)
       redirect_to :back, notice: "Created." #dashboard_users_path
     end
 
     def update
-      @<%= instance_name %> = <%= model_name_camel %>.find(params[:id])
+      @<%= instance_name %> = <%= class_name %>.find(params[:id])
       if @<%= instance_name %>.update(<%= instance_name %>_params)
         redirect_to :back, notice: "Updated." #dashboard_users_path
       end
     end
 
     def new
-      @<%= instance_name %> = <%= model_name_camel %>.new
+      @<%= instance_name %> = <%= class_name %>.new
     end
     private
     def <%= instance_name %>_params
-      reqParams = params.require(:<%= all_instance_name %>).permit(<%= model_name_camel %>.valid_attrs.keys)
+      reqParams = params.require(:<%= all_instance_name %>).permit(<%= class_name %>.valid_attrs.keys)
       reqParams.each do |reqp|
         # logger.tagged("req params") { logger.debug reqParams}
-        if <%= model_name_camel %>.fields[reqp[0]] && <%= model_name_camel %>.fields[reqp[0]].options[:type] == Array then
+        if <%= class_name %>.fields[reqp[0]] && <%= class_name %>.fields[reqp[0]].options[:type] == Array then
           reqParams[reqp[0]] = reqp[1].split(" ")
         end
-        if <%= model_name_camel %>.fields[reqp[0]] && <%= model_name_camel %>.fields[reqp[0]].options[:type] == Hash then
+        if <%= class_name %>.fields[reqp[0]] && <%= class_name %>.fields[reqp[0]].options[:type] == Hash then
           reqParams[reqp[0]] = JSON.parse(reqp[1])
         end
       end
