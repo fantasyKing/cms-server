@@ -51,6 +51,8 @@ gem 'carrierwave'
 
 gem 'uuid', '~> 2.3', '>= 2.3.8'
 
+gem "string-cases"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

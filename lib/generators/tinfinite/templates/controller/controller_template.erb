@@ -1,48 +1,48 @@
-module Db<%= class_name %>
-  class AppInfosController < ApplicationController
+module Db<%= db_name_camel %>
+  class <%= model_name_camel.pluralize %>Controller < ApplicationController
     def index
-      @app_app_info_grid = AppAppInfoGrid.new(params[:app_app_info_grid]) do |scope|
+      @<%= all_instance_name %>_grid = <%= grid_name %>Grid.new(params[:<%= instance_name %>_grid]) do |scope|
         scope.page(params[:page]).per(25)
       end
     end
 
     def show
-      @app_info = AppAppInfo.find(params[:id])
+      @<%= instance_name %> = <%= model_name_camel %>.find(params[:id])
     end
 
     def edit
-        @app_info = AppAppInfo.find(params[:id])
+        @<%= instance_name %> = <%= model_name_camel %>.find(params[:id])
     end
 
     def destroy
-      @app_info = AppAppInfo.find(params[:id]).delete
+      @<%= instance_name %> = <%= model_name_camel %>.find(params[:id]).delete
       redirect_to :back, notice: "Deleted." #dashboard_users_path
     end
 
     def create
-      @app_info = AppAppInfo.create(app_info_params)
+      @<%= instance_name %> = <%= model_name_camel %>.create(app_info_params)
       redirect_to :back, notice: "Created." #dashboard_users_path
     end
 
     def update
-      @app_info = AppAppInfo.find(params[:id])
-      if @app_info.update(app_info_params)
+      @<%= instance_name %> = <%= model_name_camel %>.find(params[:id])
+      if @<%= instance_name %>.update(<%= instance_name %>_params)
         redirect_to :back, notice: "Updated." #dashboard_users_path
       end
     end
 
     def new
-      @app_info = AppAppInfo.new
+      @<%= instance_name %> = <%= model_name_camel %>.new
     end
     private
-    def app_info_params
-      reqParams = params.require(:app_app_info).permit(AppAppInfo.valid_attrs.keys)
+    def <%= instance_name %>_params
+      reqParams = params.require(:<%= all_instance_name %>).permit(<%= model_name_camel %>.valid_attrs.keys)
       reqParams.each do |reqp|
         # logger.tagged("req params") { logger.debug reqParams}
-        if AppAppInfo.fields[reqp[0]] && AppAppInfo.fields[reqp[0]].options[:type] == Array then
+        if <%= model_name_camel %>.fields[reqp[0]] && <%= model_name_camel %>.fields[reqp[0]].options[:type] == Array then
           reqParams[reqp[0]] = reqp[1].split(" ")
         end
-        if AppAppInfo.fields[reqp[0]] && AppAppInfo.fields[reqp[0]].options[:type] == Hash then
+        if <%= model_name_camel %>.fields[reqp[0]] && <%= model_name_camel %>.fields[reqp[0]].options[:type] == Hash then
           reqParams[reqp[0]] = JSON.parse(reqp[1])
         end
       end
