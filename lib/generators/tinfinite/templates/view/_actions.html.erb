@@ -1,0 +1,9 @@
+<div class="btn-group">
+    <div class="btn-group">
+        <%%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_db_<%= all_instance_name %>_path(obj.id), :class => "btn btn-xs btn-default", :'data-toggle' => "tooltip", :'data-original-title' => "Edit"%>
+
+        <%%= link_to '<i class="fa fa-times"></i>'.html_safe, db_<%= all_instance_name %>_path(obj.id), :method => :delete, :class => "btn btn-xs btn-default", :'data-toggle' => "tooltip", :'data-original-title' => "Remove", :'data-confirm' => "Confirm remove the item?"%>
+
+        <%%= link_to '<i class="fa fa-check-square-o"></i>'.html_safe, db_<%= all_instance_name %>_path(obj.id), :class => "btn btn-xs btn-default", :'data-toggle' => "tooltip", :'data-original-title' => "Show"%>
+    </div>
+</div>

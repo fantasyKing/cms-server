@@ -1,0 +1,11 @@
+<%% <%= class_name %>.valid_attrs.each do |key, val| %>
+  <%% if (val == 'Hash') then %>
+    <%%= f.input key, as: :text, input_html: { class: 'simple-form-textArea', rows: 10 } %>
+  <%% else %>
+    <%%= f.input key %>
+  <%% end %>
+<%% end %>
+
+<div class="form-group">
+  <%%= f.button :submit %>
+</div>
