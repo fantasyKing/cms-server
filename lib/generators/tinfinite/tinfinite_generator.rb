@@ -42,4 +42,8 @@ class TinfiniteGenerator < Rails::Generators::NamedBase
   def create_grid_file
     template "grid/grid_template.erb", "app/grids/#{file_name}_grid.rb"
   end
+
+  def create_model_file
+    template "model/model_template.erb", "app/models/#{file_name}.rb"
+  end
 end

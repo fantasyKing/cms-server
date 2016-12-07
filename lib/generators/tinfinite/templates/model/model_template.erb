@@ -7,7 +7,7 @@ class <%= class_name %>
   # field :app_id, type: String
 
   def self.valid_attrs
-    res = AppAppInfo.fields
+    res = <%= class_name %>.fields
     tableHash = Hash.new;
     res.each {|key, value| tableHash[key.to_sym] = value.options[:type].to_s }
     firstIns = self.first
