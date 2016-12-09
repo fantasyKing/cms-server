@@ -4,6 +4,6 @@
 <%% content_for :panel_heading do %><%= db_name %>: <%= model_name %><%% end %>
 <%% content_for :panel_button do %><a type="button" class="btn btn-primary" href=<%= new_db_<%= all_instance_name %>_path %>>create</a><% end %>
 <%%= datagrid_form_for @<%= all_instance_name %>_grid, :method => :get, :url => db_<%= all_instance_name.pluralize %>_path %>
-<h4>Total: <span class="label label-primary"><%= @<%= all_instance_name %>_grid.assets.total_count %></span></h4>
+<h4>Total: <span class="label label-primary"><%%= @<%= all_instance_name %>_grid.assets.total_count %></span></h4>
 <%%= datagrid_table @<%= all_instance_name %>_grid %>
 <%%= paginate @<%= all_instance_name %>_grid.assets %>
