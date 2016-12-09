@@ -23,7 +23,7 @@ class TinfiniteGenerator < Rails::Generators::NamedBase
   end
 
   def all_instance_name
-    file_name
+    file_name.to_s
   end
 
   def instance_name
