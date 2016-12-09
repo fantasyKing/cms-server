@@ -6,4 +6,4 @@
 <%%= datagrid_form_for @<%= all_instance_name %>_grid, :method => :get, :url => db_<%= all_instance_name.pluralize %>_path %>
 <h4>Total: <span class="label label-primary"><%= @<%= all_instance_name %>_grid.assets.total_count %></span></h4>
 <%%= datagrid_table @<%= all_instance_name %>_grid %>
-<%%= paginate(@<%= all_instance_name %>_grid.assets) %>
+<%%= paginate @<%= all_instance_name %>_grid.assets %>
